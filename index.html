@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="utf-8" />
+        <title>💾Machine Learning</title>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.9.4/p5.js"></script>
+        <link rel="stylesheet" href="style.css" />
+    </head>
+    <body>
+        <header>
+            <p>
+               <a href="index.html"class="actvio">Hola</a>
+                <a href="page-1.html">BodyPose</a>
+                <a href="page-2.html">Bodysegmentation</a>
+                <a href="page-3.html">HandPose</a>
+                <a href="page-4.html">FaceMesh</a>
+            </p>
+            <h1></h1>
+            <h2></h2>
+            <p id="aqui"></p>
+        </header>
+        <main></main>
+
+        <script>
+            var texto = {
+                saludo: ["¡Hola mi gente linda!","¿Qué Talca?","Hola profe","Bienvenides","Hola mi gente latino"],
+                nombre: "Me llamo Fernanda Mamani",
+                motivo:
+                    "Tome este curso porque me interesa seguir aprendiendo del diseño UX/Ui y sigo en este curso porque estoy decicda querer aprender aunque implique sufrimiento jaja. Además quiero lograr poder hacer mi portafolio con programación o que este tenga cierta parte programada",
+            };
+            var saludando, nombrando, motivando;
+            function setup() {
+                createCanvas(windowWidth, windowHeight);
+                saludando = select("h1");
+                saludando.html(random(texto.saludo));
+                nombrando = select("h2");
+                nombrando.html(texto.nombre);
+                motivando = select("#aqui");
+                motivando.html(texto.motivo);
+            }
+            function draw() {
+                //repita este background en el style.css
+                background("#37474F");
+                textSize(40);
+                text("🗿", mouseX, mouseY);
+            }
+            function windowResized() {
+                //repita un mismo background en el style.css y en todos los script
+                background("#37474F");
+                resizeCanvas(windowWidth, windowHeight);
+            }
+        </script>
+    </body>
+</html>
